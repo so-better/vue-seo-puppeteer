@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 
-const spider = function(url) {
+const spider = (url) => {
 	return new Promise((resolve, reject) => {
 		var page = null;
 		var brower = null;
@@ -23,10 +23,10 @@ const spider = function(url) {
 			return page.evaluate(() => {
 				return document.getElementsByTagName('html')[0].outerHTML;
 			});
-		}).then((result)=>{
+		}).then((result) => {
 			brower.close();
 			resolve(result);
-		}).catch((error)=>{
+		}).catch((error) => {
 			reject(error)
 		})
 	})
