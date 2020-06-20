@@ -7,8 +7,9 @@ app.get('*',async function(req, res,next){
     var url = 'https://www.mvi-web.cn' + req.originalUrl;
 	console.log('请求的完整URL：'+ url);
 	var content = await spider(url).catch((error)=>{
-		console.log('获取html内容失败')
 		console.log(error);
+		res.send('获取html内容失败');
+		return;
 	});
 	res.send(content);
 });
