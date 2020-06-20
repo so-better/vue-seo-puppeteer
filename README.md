@@ -1,1 +1,1 @@
-# vue seo phantomjs方案
+# vue seo puppetter方案
