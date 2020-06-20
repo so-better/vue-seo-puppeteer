@@ -21,7 +21,7 @@ const spider = function(url) {
 			})
 		}).then(() => {
 			return page.evaluate(() => {
-				return document.documentElement.innerHTML;
+				return document.getElementsByTagName('html').outerHTML;
 			});
 		}).then((result)=>{
 			brower.close();
