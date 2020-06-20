@@ -17,7 +17,8 @@ const spider = (url) => {
 			page = result;
 			//打开指定网页
 			return page.goto(url, {
-				waitUntil: 'networkidle2' //网络空闲说明已加载完毕
+				timeout:60000,//连接超时时间，单位ms
+				waitUntil: 'networkidle0' //网络空闲说明已加载完毕
 			})
 		}).then(() => {
 			return page.evaluate(() => {
