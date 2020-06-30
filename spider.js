@@ -22,7 +22,7 @@ const spider = async (url) => {
 		return document.getElementsByTagName('html')[0].outerHTML;
 	});
 
-	page.close();
+	await page.close();
 
 	return html;
 }
