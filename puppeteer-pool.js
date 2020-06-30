@@ -5,7 +5,7 @@ let WSE_LIST = []; //存储browserWSEndpoint列表
 (async () => {
 	for (var i = 0; i < MAX_WSE; i++) {
 		const browser = await puppeteer.launch({
-			headless: false,
+			headless: true,
 			args: [
 				'--disable-gpu',
 				'--disable-dev-shm-usage',
