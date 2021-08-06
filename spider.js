@@ -11,14 +11,14 @@ const spider = async (url) => {
 		browserWSEndpoint
 	});
 	
-	var page = await browser.newPage();
+	let page = await browser.newPage();
 
 	await page.goto(url, {
 		timeout: 0, //连接超时时间，单位ms
 		waitUntil: 'networkidle0' //网络空闲说明已加载完毕
 	})
 
-	var html = await page.evaluate(() => {
+	let html = await page.evaluate(() => {
 		return document.getElementsByTagName('html')[0].outerHTML;
 	});
 

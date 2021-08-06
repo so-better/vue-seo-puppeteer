@@ -1,12 +1,12 @@
-var express = require('express');
-var app = express();
-var spider = require("./spider.js")
+const express = require('express');
+const app = express();
+const spider = require("./spider.js")
 
 app.get('*', async (req, res, next) => {
 	// 部署到服务器的完整URL
-	var url = 'https://www.mvi-web.cn' + req.originalUrl;
+	let url = 'https://www.mvi-web.cn' + req.originalUrl;
 	console.log('请求的完整URL：' + url);
-	var content = await spider(url).catch((error) => {
+	let content = await spider(url).catch((error) => {
 		console.log(error);
 		res.send('获取html内容失败');
 		return;

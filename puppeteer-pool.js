@@ -3,7 +3,7 @@ const MAX_WSE = 2; //启动几个浏览器
 let WSE_LIST = []; //存储browserWSEndpoint列表
 
 (async () => {
-	for (var i = 0; i < MAX_WSE; i++) {
+	for (let i = 0; i < MAX_WSE; i++) {
 		const browser = await puppeteer.launch({
 			headless: true,
 			args: [
