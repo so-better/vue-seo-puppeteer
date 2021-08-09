@@ -20,10 +20,12 @@ app.get('*', async (req, res, next) => {
 	
 	// 访问的爬虫的user-agent
 	let userAgent = req.headers['user-agent'];
-	//将爬虫记录到文本去
-	const filePath = './user_agent.txt';
-	//追加写入内容
-	await fdOp.appendFile(filePath,userAgent+os.EOL+os.EOL);
+	if(userAgent){
+		//将爬虫记录到文本去
+		const filePath = './user_agent.txt';
+		//追加写入内容
+		await fdOp.appendFile(filePath,userAgent+os.EOL+os.EOL);
+	}
 });
 
 app.listen(3000, () => {
