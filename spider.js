@@ -12,7 +12,7 @@ const spider = async url => {
 		waitUntil: 'networkidle0' //网络空闲说明已加载完毕
 	})
 	const html = await page.evaluate(() => {
-		return document.getElementsByTagName('html')[0].outerHTML
+		return document.getElementsByTagName('html')[0]?.outerHTML
 	})
 	await page.close()
 	return html

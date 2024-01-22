@@ -8,7 +8,7 @@ let WSE_LIST = [] //存储browserWSEndpoint列表
 			headless: true,
 			args: ['--disable-gpu', '--disable-dev-shm-usage', '--disable-setuid-sandbox', '--no-first-run', '--no-sandbox', '--no-zygote', '--single-process']
 		})
-		browserWSEndpoint = await browser.wsEndpoint()
+		const browserWSEndpoint = await browser.wsEndpoint()
 		WSE_LIST.push(browserWSEndpoint)
 	}
 })()
